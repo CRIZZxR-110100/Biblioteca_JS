@@ -1,0 +1,185 @@
+{
+  "result": [
+    {
+      "isbn": "978-1-5358-5160-2",
+      "titulo": "Second Treatise of Government",
+      "idAutores": [],
+      "editorial": "Harber LLC",
+      "edicion": "5",
+      "ano_pub": "2010"
+    },
+    {
+      "isbn": "978-0-382-14142-3",
+      "titulo": "Dubliners",
+      "idAutores": [],
+      "editorial": "Koelpin, Dare and Kuphal",
+      "edicion": "9",
+      "ano_pub": "1998"
+    },
+    {
+      "isbn": "978-1-4292-9424-9",
+      "titulo": "Clarissa",
+      "idAutores": [],
+      "editorial": "Rogahn Group",
+      "edicion": "10",
+      "ano_pub": "2018"
+    },
+    {
+      "isbn": "978-0-7316-7069-7",
+      "titulo": "The Waste Land",
+      "idAutores": [],
+      "editorial": "Heathcote Inc",
+      "edicion": "12",
+      "ano_pub": "2008"
+    },
+    {
+      "isbn": "978-0-89092-731-1",
+      "titulo": "Clarissa",
+      "idAutores": [],
+      "editorial": "Macejkovic - Dickens",
+      "edicion": "3",
+      "ano_pub": "2021"
+    }
+  ],
+  "autores": [
+    {
+      "id": "f8904c34-f89a-4e55-af70-1ee79658081a",
+      "nombre": "Casimir",
+      "apellidos": "Goyette",
+      "nacionalidad": "Spain"
+    },
+    {
+      "id": "16b6ed87-4043-4f17-a773-50ae96f58cba",
+      "nombre": "Hyman",
+      "apellidos": "Cronin",
+      "nacionalidad": "Chad"
+    },
+    {
+      "id": "056304de-7f8c-4e08-819d-f3bbd77d1902",
+      "nombre": "Desmond",
+      "apellidos": "Funk",
+      "nacionalidad": "Morocco"
+    },
+    {
+      "id": "973d6d47-a48f-4e52-bf5c-e044f40f534c",
+      "nombre": "Laurel",
+      "apellidos": "Hermann",
+      "nacionalidad": "Luxembourg"
+    },
+    {
+      "id": "710e576f-23a2-43db-b33f-a58f096be241",
+      "nombre": "Noemie",
+      "apellidos": "Welch",
+      "nacionalidad": "Singapore"
+    },
+    {
+      "id": "71cf2414-15a4-47f6-ae6f-1cf335738aee",
+      "nombre": "Leon",
+      "apellidos": "Streich",
+      "nacionalidad": "Moldova"
+    },
+    {
+      "id": "6ebdbfb9-ffe2-4f32-a4ed-2e037cbd7c55",
+      "nombre": "Emmanuelle",
+      "apellidos": "Goyette",
+      "nacionalidad": "Sweden"
+    },
+    {
+      "id": "e613de36-074d-4a6b-8e81-3fd555c1ba9b",
+      "nombre": "Alessandro",
+      "apellidos": "Halvorson",
+      "nacionalidad": "Virgin Islands, U.S."
+    },
+    {
+      "id": "d07e9f41-ae72-4703-ae94-9d39f7b3bc51",
+      "nombre": "Arely",
+      "apellidos": "Predovic",
+      "nacionalidad": "Tuvalu"
+    },
+    {
+      "id": "ccb1a0a1-1802-4db3-808c-0e0772e77079",
+      "nombre": "Madie",
+      "apellidos": "Pouros",
+      "nacionalidad": "Uruguay"
+    }
+  ],
+  "clientes": [
+    {
+      "id": "5c8eed2b-0048-4d80-9cc9-0f2571873cce",
+      "nombre": "Natalia",
+      "apellidos": "Streich",
+      "userName": "Bailey.Bernier12",
+      "email": "Micaela_Keeling27@yahoo.com"
+    },
+    {
+      "id": "bc32aab3-aa4e-4d86-b223-e68857043f13",
+      "nombre": "Connor",
+      "apellidos": "Bayer",
+      "userName": "Maeve_Raynor",
+      "email": "Leonor9@hotmail.com"
+    },
+    {
+      "id": "bb497d1c-e126-4e55-af22-73ed3e9f4d5b",
+      "nombre": "Morgan",
+      "apellidos": "Fahey",
+      "userName": "Dino3",
+      "email": "Leanne.Rolfson71@hotmail.com"
+    },
+    {
+      "id": "8c6da45c-0d60-42cb-9a7f-1dfac16901ab",
+      "nombre": "Jessy",
+      "apellidos": "Okuneva",
+      "userName": "Darrick.West25",
+      "email": "Josiah.Hettinger34@gmail.com"
+    },
+    {
+      "id": "4943442a-e601-4f20-98d2-d3d3e5b29786",
+      "nombre": "Emmy",
+      "apellidos": "McLaughlin",
+      "userName": "Gregoria99",
+      "email": "Riley_Sporer41@hotmail.com"
+    }
+  ],
+  "empleados": [
+    {
+      "id": "69e5752f-ae35-4548-ad9b-8f104c01b0e5",
+      "nombre": "Tremaine Jules",
+      "apellidos": "Ullrich",
+      "userName": "Leola23",
+      "email": "Reilly.White@yahoo.com",
+      "area": "Identity"
+    },
+    {
+      "id": "ba64f9ab-87e4-493f-a822-9af8e5222f1f",
+      "nombre": "King Marlowe",
+      "apellidos": "Keeling",
+      "userName": "Raleigh38",
+      "email": "Ralph_Hoeger23@gmail.com",
+      "area": "Accounts"
+    },
+    {
+      "id": "229c4b8a-e0b3-47f8-bb2b-e1ef833f05e9",
+      "nombre": "Madyson Arden",
+      "apellidos": "Stoltenberg",
+      "userName": "Reginald_Ortiz32",
+      "email": "Khalil.Jacobson74@hotmail.com",
+      "area": "Accounts"
+    }
+  ],
+  "prestamos": [
+    {
+      "estado": "devuelto (Posibles: devuelto, activo)",
+      "isbn": "",
+      "idCliente": "",
+      "inicio": "datetime",
+      "termino": "datetime"
+    },
+    {
+      "estado": "devuelto (Posibles: devuelto, activo)",
+      "isbn": "",
+      "idCliente": "",
+      "inicio": "datetime",
+      "termino": "datetime"
+    }
+  ]
+}
