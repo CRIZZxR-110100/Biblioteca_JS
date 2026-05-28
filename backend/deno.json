@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "back": "json-server db/datos.json --port 3000"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "json-server": "npm:json-server"
+  }
+}
