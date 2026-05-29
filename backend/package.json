@@ -3,6 +3,6 @@
     "json-server": "^1.0.0-beta.15"
   },
   "scripts": {
-    "back": "json-server db/datos.json --port 3000"
+    "back": "json-server db/datos.json --port 52752"
   }
 }

@@ -1,182 +1,205 @@
 {
-  "result": [
+  "libros": [
     {
-      "isbn": "978-1-5358-5160-2",
+      "id": "218",
+      "titulo": "Native Son",
+      "idAutores": [],
+      "editorial": "Ryan LLC",
+      "edicion": "9",
+      "ano_pub": "2009"
+    },
+    {
+      "id": "738",
+      "titulo": "His Dark Materials",
+      "idAutores": [],
+      "editorial": "Hane - Ritchie",
+      "edicion": "5",
+      "ano_pub": "1992"
+    },
+    {
+      "id": "879",
       "titulo": "Second Treatise of Government",
       "idAutores": [],
-      "editorial": "Harber LLC",
-      "edicion": "5",
-      "ano_pub": "2010"
-    },
-    {
-      "isbn": "978-0-382-14142-3",
-      "titulo": "Dubliners",
-      "idAutores": [],
-      "editorial": "Koelpin, Dare and Kuphal",
+      "editorial": "Crona - Connelly",
       "edicion": "9",
-      "ano_pub": "1998"
+      "ano_pub": "2004"
     },
     {
-      "isbn": "978-1-4292-9424-9",
-      "titulo": "Clarissa",
+      "id": "415",
+      "titulo": "Under the Volcano",
       "idAutores": [],
-      "editorial": "Rogahn Group",
-      "edicion": "10",
-      "ano_pub": "2018"
+      "editorial": "Prohaska - Hansen",
+      "edicion": "12",
+      "ano_pub": "2006"
     },
     {
-      "isbn": "978-0-7316-7069-7",
+      "id": "461",
       "titulo": "The Waste Land",
       "idAutores": [],
-      "editorial": "Heathcote Inc",
-      "edicion": "12",
-      "ano_pub": "2008"
-    },
-    {
-      "isbn": "978-0-89092-731-1",
-      "titulo": "Clarissa",
-      "idAutores": [],
-      "editorial": "Macejkovic - Dickens",
-      "edicion": "3",
-      "ano_pub": "2021"
+      "editorial": "Reinger and Sons",
+      "edicion": "10",
+      "ano_pub": "2017"
     }
   ],
   "autores": [
     {
-      "id": "f8904c34-f89a-4e55-af70-1ee79658081a",
-      "nombre": "Casimir",
-      "apellidos": "Goyette",
-      "nacionalidad": "Spain"
+      "id": "602",
+      "nombre": "Antonietta",
+      "apellido": "Runolfsson",
+      "nacionalidad": "Somalia"
     },
     {
-      "id": "16b6ed87-4043-4f17-a773-50ae96f58cba",
-      "nombre": "Hyman",
-      "apellidos": "Cronin",
-      "nacionalidad": "Chad"
+      "id": "680",
+      "nombre": "Brannon",
+      "apellido": "Kovacek",
+      "nacionalidad": "Cote d'Ivoire"
     },
     {
-      "id": "056304de-7f8c-4e08-819d-f3bbd77d1902",
-      "nombre": "Desmond",
-      "apellidos": "Funk",
-      "nacionalidad": "Morocco"
+      "id": "802",
+      "nombre": "Grace",
+      "apellido": "Bruen",
+      "nacionalidad": "Venezuela"
     },
     {
-      "id": "973d6d47-a48f-4e52-bf5c-e044f40f534c",
-      "nombre": "Laurel",
-      "apellidos": "Hermann",
-      "nacionalidad": "Luxembourg"
+      "id": "186",
+      "nombre": "Beaulah",
+      "apellido": "Will",
+      "nacionalidad": "Portugal"
     },
     {
-      "id": "710e576f-23a2-43db-b33f-a58f096be241",
-      "nombre": "Noemie",
-      "apellidos": "Welch",
-      "nacionalidad": "Singapore"
+      "id": "792",
+      "nombre": "Daisha",
+      "apellido": "Lind",
+      "nacionalidad": "Greece"
     },
     {
-      "id": "71cf2414-15a4-47f6-ae6f-1cf335738aee",
-      "nombre": "Leon",
-      "apellidos": "Streich",
-      "nacionalidad": "Moldova"
+      "id": "777",
+      "nombre": "Kaden",
+      "apellido": "Parker",
+      "nacionalidad": "Fiji"
     },
     {
-      "id": "6ebdbfb9-ffe2-4f32-a4ed-2e037cbd7c55",
-      "nombre": "Emmanuelle",
-      "apellidos": "Goyette",
-      "nacionalidad": "Sweden"
+      "id": "307",
+      "nombre": "Emerson",
+      "apellido": "Green",
+      "nacionalidad": "Equatorial Guinea"
     },
     {
-      "id": "e613de36-074d-4a6b-8e81-3fd555c1ba9b",
-      "nombre": "Alessandro",
-      "apellidos": "Halvorson",
-      "nacionalidad": "Virgin Islands, U.S."
+      "id": "414",
+      "nombre": "Jaydon",
+      "apellido": "Franecki",
+      "nacionalidad": "Democratic Republic of the Congo"
     },
     {
-      "id": "d07e9f41-ae72-4703-ae94-9d39f7b3bc51",
-      "nombre": "Arely",
-      "apellidos": "Predovic",
-      "nacionalidad": "Tuvalu"
+      "id": "972",
+      "nombre": "Margarette",
+      "apellido": "Mante",
+      "nacionalidad": "Maldives"
     },
     {
-      "id": "ccb1a0a1-1802-4db3-808c-0e0772e77079",
-      "nombre": "Madie",
-      "apellidos": "Pouros",
-      "nacionalidad": "Uruguay"
+      "id": "904",
+      "nombre": "Hope",
+      "apellido": "Dooley",
+      "nacionalidad": "Costa Rica"
     }
   ],
   "clientes": [
     {
-      "id": "5c8eed2b-0048-4d80-9cc9-0f2571873cce",
-      "nombre": "Natalia",
-      "apellidos": "Streich",
-      "userName": "Bailey.Bernier12",
-      "email": "Micaela_Keeling27@yahoo.com"
+      "id": "149",
+      "nombre": "Madisen",
+      "apellido": "Kshlerin-Lehner",
+      "userName": "Marley35",
+      "email": "Evans.Marquardt@yahoo.com"
     },
     {
-      "id": "bc32aab3-aa4e-4d86-b223-e68857043f13",
-      "nombre": "Connor",
-      "apellidos": "Bayer",
-      "userName": "Maeve_Raynor",
-      "email": "Leonor9@hotmail.com"
+      "id": "717",
+      "nombre": "Margarita",
+      "apellido": "Deckow",
+      "userName": "Guiseppe96",
+      "email": "Mellie_Lueilwitz22@yahoo.com"
     },
     {
-      "id": "bb497d1c-e126-4e55-af22-73ed3e9f4d5b",
-      "nombre": "Morgan",
-      "apellidos": "Fahey",
-      "userName": "Dino3",
-      "email": "Leanne.Rolfson71@hotmail.com"
+      "id": "541",
+      "nombre": "Dewayne",
+      "apellido": "Collins",
+      "userName": "Emanuel.Dibbert80",
+      "email": "Douglas.Rath@hotmail.com"
     },
     {
-      "id": "8c6da45c-0d60-42cb-9a7f-1dfac16901ab",
-      "nombre": "Jessy",
-      "apellidos": "Okuneva",
-      "userName": "Darrick.West25",
-      "email": "Josiah.Hettinger34@gmail.com"
+      "id": "97",
+      "nombre": "Sylvan",
+      "apellido": "Turner",
+      "userName": "Rocky.Heller44",
+      "email": "Kaleb_Nader64@gmail.com"
     },
     {
-      "id": "4943442a-e601-4f20-98d2-d3d3e5b29786",
-      "nombre": "Emmy",
-      "apellidos": "McLaughlin",
-      "userName": "Gregoria99",
-      "email": "Riley_Sporer41@hotmail.com"
+      "id": "482",
+      "nombre": "Sabina",
+      "apellido": "Lindgren-Flatley",
+      "userName": "Jeanette.Borer",
+      "email": "Reba99@hotmail.com"
     }
   ],
   "empleados": [
     {
-      "id": "69e5752f-ae35-4548-ad9b-8f104c01b0e5",
-      "nombre": "Tremaine Jules",
-      "apellidos": "Ullrich",
-      "userName": "Leola23",
-      "email": "Reilly.White@yahoo.com",
-      "area": "Identity"
+      "id": "215",
+      "nombre": "Kelley",
+      "apellido": "Morar",
+      "email": "Jasen63@gmail.com",
+      "puesto": "Dynamic Factors Orchestrator",
+      "area": "Applications"
     },
     {
-      "id": "ba64f9ab-87e4-493f-a822-9af8e5222f1f",
-      "nombre": "King Marlowe",
-      "apellidos": "Keeling",
-      "userName": "Raleigh38",
-      "email": "Ralph_Hoeger23@gmail.com",
-      "area": "Accounts"
+      "id": "98",
+      "nombre": "Mireya",
+      "apellido": "Hauck",
+      "email": "Peyton_Kunze80@yahoo.com",
+      "puesto": "Direct Usability Consultant",
+      "area": "Response"
     },
     {
-      "id": "229c4b8a-e0b3-47f8-bb2b-e1ef833f05e9",
-      "nombre": "Madyson Arden",
-      "apellidos": "Stoltenberg",
-      "userName": "Reginald_Ortiz32",
-      "email": "Khalil.Jacobson74@hotmail.com",
-      "area": "Accounts"
+      "id": "471",
+      "nombre": "Aletha",
+      "apellido": "Douglas",
+      "email": "Alda.Langworth@hotmail.com",
+      "puesto": "Chief Security Liaison",
+      "area": "Optimization"
+    },
+    {
+      "id": "687",
+      "nombre": "Karl",
+      "apellido": "Purdy",
+      "email": "Zula.Sanford85@gmail.com",
+      "puesto": "Dynamic Functionality Producer",
+      "area": "Functionality"
+    },
+    {
+      "id": "183",
+      "nombre": "Napoleon",
+      "apellido": "Moen",
+      "email": "Evalyn53@yahoo.com",
+      "puesto": "Human Intranet Agent",
+      "area": "Group"
     }
   ],
   "prestamos": [
     {
       "estado": "devuelto (Posibles: devuelto, activo)",
-      "isbn": "",
+      "idLibro": "",
       "idCliente": "",
       "inicio": "datetime",
       "termino": "datetime"
     },
     {
-      "estado": "devuelto (Posibles: devuelto, activo)",
-      "isbn": "",
+      "estado": "activo (Posibles: devuelto, activo)",
+      "idLibro": "",
+      "idCliente": "",
+      "inicio": "datetime",
+      "termino": "datetime"
+    },
+    {
+      "estado": "activo (Posibles: devuelto, activo)",
+      "idLibro": "",
       "idCliente": "",
       "inicio": "datetime",
       "termino": "datetime"
