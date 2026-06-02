@@ -1,6 +1,6 @@
-const url = "http://localhost:52752/clientes"
+const url = "http://localhost:52752/libros"
 
-export const getUsuarios = async () => {
+export const getLibros = async () => {
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -14,7 +14,7 @@ export const getUsuarios = async () => {
   }
 }
 
-export const getUsusarioById = async (id) => {
+export const getLibroById = async (id) => {
   try {
     const response = await fetch(`${url}/${id}`);
     if (!response.ok) {
@@ -28,12 +28,12 @@ export const getUsusarioById = async (id) => {
   }
 }
 
-export const postCliente = async (cliente) => {
+export const postLibro = async (libro) => {
   try {
     const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(cliente),
+      body: JSON.stringify(libro),
     });
     if (!response.ok) {
       const error = new Error(`${response.status}`);

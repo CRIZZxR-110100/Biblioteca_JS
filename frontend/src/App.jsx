@@ -1,17 +1,27 @@
 import { getUsuarios, getUsusarioById } from './services/clientesServices';
 
-const App = () => {
-  getUsuarios().then(data => console.log(data))
+import TablaLibros from './components/TablaLibros'
+import TablaAutores from './components/TablaAutores'
+import TablaClientes from './components/TablaClientes'
+import TablaEmpleados from './components/TablaEmpleados'
+import TablaPrestamos from './components/TablaPrestamos'
 
-  const userId = 0
-  getUsusarioById(userId)
-    .then(data => console.log(data))
-    .catch(error => {
-      if (error.status === 404)
-        console.error(`Usuario ${userId} no encontrado`)
-      else
-        console.error(`Error al obtener el usuario: ${error.message}`)
-    });
+import FormLibros from './components/FormLibros'
+import FormAutores from './components/FormAutores'
+import FormClientes from './components/FormClientes'
+import FormEmpleados from './components/FormEmpleados'
+import FormPrestamos from './components/FormPrestamos'
+
+const App = () => {
+  return (
+    <div>
+      <FormLibros />
+      <FormAutores />
+      <FormClientes />
+      <FormEmpleados />
+      <FormPrestamos />
+    </div>
+  )
 }
 
 export default App
