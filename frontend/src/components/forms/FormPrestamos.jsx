@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { postPrestamo } from '../services/prestamosServices'
-import { getLibros } from '../services/librosServices'
-import { getUsuarios } from '../services/clientesServices'
+import { postPrestamo } from '../../services/prestamosServices'
+import { getLibros } from '../../services/librosServices'
+import { getUsuarios } from '../../services/clientesServices'
 
 function FormPrestamos() {
   const [form, setForm] = useState({

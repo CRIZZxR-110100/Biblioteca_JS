@@ -45,3 +45,37 @@ export const postLibro = async (libro) => {
     throw error;
   }
 }
+
+export const putLibro = async (id, libro) => {
+  try {
+    const response = await fetch(`${url}/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(libro),
+    });
+    if (!response.ok) {
+      const error = new Error(`${response.status}`);
+      error.status = response.status;
+      throw error;
+    }
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+}
+
+export const deleteLibro = async (id) => {
+  try {
+    const response = await fetch(`${url}/${id}`, {
+      method: 'DELETE',
+    });
+    if (!response.ok) {
+      const error = new Error(`${response.status}`);
+      error.status = response.status;
+      throw error;
+    }
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+}

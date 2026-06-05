@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { postLibro } from '../services/librosServices'
-import { getAutores } from '../services/autoresServices'
+import { postLibro } from '../../services/librosServices'
+import { getAutores } from '../../services/autoresServices'
 
 function FormLibros() {
   const [form, setForm] = useState({

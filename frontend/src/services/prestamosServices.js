@@ -45,3 +45,37 @@ export const postPrestamo = async (prestamo) => {
     throw error;
   }
 }
+
+export const putPrestamo = async (id, prestamo) => {
+  try {
+    const response = await fetch(`${url}/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(prestamo),
+    });
+    if (!response.ok) {
+      const error = new Error(`${response.status}`);
+      error.status = response.status;
+      throw error;
+    }
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+}
+
+export const deletePrestamo = async (id) => {
+  try {
+    const response = await fetch(`${url}/${id}`, {
+      method: 'DELETE',
+    });
+    if (!response.ok) {
+      const error = new Error(`${response.status}`);
+      error.status = response.status;
+      throw error;
+    }
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+}

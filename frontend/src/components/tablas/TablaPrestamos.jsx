@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getPrestamos } from '../services/prestamosServices'
+import { getPrestamos } from '../../services/prestamosServices'
 
 function TablaPrestamos() {
   const [prestamos, setPrestamos] = useState([])
@@ -17,16 +17,18 @@ function TablaPrestamos() {
     <table className="w3-table w3-striped w3-bordered w3-hoverable">
       <thead>
         <tr className="w3-blue">
+          <th>ID</th>
           <th>Estado</th>
-          <th>ID Libro</th>
-          <th>ID Cliente</th>
+          <th>Libro</th>
+          <th>Cliente</th>
           <th>Inicio</th>
           <th>Término</th>
         </tr>
       </thead>
       <tbody>
-        {prestamos.map((prestamo, idx) => (
-          <tr key={idx}>
+        {prestamos.map((prestamo) => (
+          <tr key={prestamo.id}>
+            <td>{prestamo.id}</td>
             <td>{prestamo.estado}</td>
             <td>{prestamo.idLibro}</td>
             <td>{prestamo.idCliente}</td>

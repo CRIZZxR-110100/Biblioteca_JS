@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { postEmpleado } from '../services/empleadosServices'
+import { postEmpleado } from '../../services/empleadosServices'
 
 function FormEmpleados() {
   const [form, setForm] = useState({

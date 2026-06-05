@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getAutores } from '../services/autoresServices'
+import { getAutores } from '../../services/autoresServices'
 
 function TablaAutores() {
   const [autores, setAutores] = useState([])

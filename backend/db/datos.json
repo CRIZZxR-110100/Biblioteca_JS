@@ -3,7 +3,9 @@
     {
       "id": "218",
       "titulo": "Native Son",
-      "idAutores": [],
+      "idAutores": [
+        "680"
+      ],
       "editorial": "Ryan LLC",
       "edicion": "9",
       "ano_pub": "2009"
@@ -11,7 +13,10 @@
     {
       "id": "738",
       "titulo": "His Dark Materials",
-      "idAutores": [],
+      "idAutores": [
+        "602",
+        "904"
+      ],
       "editorial": "Hane - Ritchie",
       "edicion": "5",
       "ano_pub": "1992"
@@ -19,7 +24,9 @@
     {
       "id": "879",
       "titulo": "Second Treatise of Government",
-      "idAutores": [],
+      "idAutores": [
+        "307"
+      ],
       "editorial": "Crona - Connelly",
       "edicion": "9",
       "ano_pub": "2004"
@@ -27,7 +34,12 @@
     {
       "id": "415",
       "titulo": "Under the Volcano",
-      "idAutores": [],
+      "idAutores": [
+
+        "802",
+        "186",
+        "792"
+      ],
       "editorial": "Prohaska - Hansen",
       "edicion": "12",
       "ano_pub": "2006"
@@ -35,7 +47,10 @@
     {
       "id": "461",
       "titulo": "The Waste Land",
-      "idAutores": [],
+      "idAutores": [
+        "602",
+        "680"
+      ],
       "editorial": "Reinger and Sons",
       "edicion": "10",
       "ano_pub": "2017"
@@ -184,6 +199,7 @@
   ],
   "prestamos": [
     {
+      "id": "001",
       "estado": "devuelto (Posibles: devuelto, activo)",
       "idLibro": "",
       "idCliente": "",
@@ -191,6 +207,7 @@
       "termino": "datetime"
     },
     {
+      "id": "002",
       "estado": "activo (Posibles: devuelto, activo)",
       "idLibro": "",
       "idCliente": "",
@@ -198,6 +215,7 @@
       "termino": "datetime"
     },
     {
+      "id": "003",
       "estado": "activo (Posibles: devuelto, activo)",
       "idLibro": "",
       "idCliente": "",

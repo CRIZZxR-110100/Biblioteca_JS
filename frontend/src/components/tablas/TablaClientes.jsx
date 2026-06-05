@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getUsuarios } from '../services/clientesServices'
+import { getUsuarios } from '../../services/clientesServices'
 
 function TablaClientes() {
   const [clientes, setClientes] = useState([])

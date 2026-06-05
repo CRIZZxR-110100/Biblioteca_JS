@@ -45,3 +45,37 @@ export const postAutor = async (autor) => {
     throw error;
   }
 }
+
+export const putAutor = async (id, autor) => {
+  try {
+    const response = await fetch(`${url}/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(autor),
+    });
+    if (!response.ok) {
+      const error = new Error(`${response.status}`);
+      error.status = response.status;
+      throw error;
+    }
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+}
+
+export const deleteAutor = async (id) => {
+  try {
+    const response = await fetch(`${url}/${id}`, {
+      method: 'DELETE',
+    });
+    if (!response.ok) {
+      const error = new Error(`${response.status}`);
+      error.status = response.status;
+      throw error;
+    }
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+}

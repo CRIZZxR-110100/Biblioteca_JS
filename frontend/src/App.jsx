@@ -1,26 +1,30 @@
-import { getUsuarios, getUsusarioById } from './services/clientesServices';
+import { Route, Routes, Navigate } from "react-router-dom"
+import { NavBar } from "./components/NavBar.jsx"
 
-import TablaLibros from './components/TablaLibros'
-import TablaAutores from './components/TablaAutores'
-import TablaClientes from './components/TablaClientes'
-import TablaEmpleados from './components/TablaEmpleados'
-import TablaPrestamos from './components/TablaPrestamos'
+import { Home } from "./components/paginas/Home.jsx"
+import { Libros } from "./components/paginas/Libros.jsx"
+import { Autores } from "./components/paginas/Autores.jsx"
+import { Clientes } from "./components/paginas/Clientes.jsx"
+import { Empleados } from "./components/paginas/Empleados.jsx"
+import { Prestamos } from "./components/paginas/Prestamos.jsx"
 
-import FormLibros from './components/FormLibros'
-import FormAutores from './components/FormAutores'
-import FormClientes from './components/FormClientes'
-import FormEmpleados from './components/FormEmpleados'
-import FormPrestamos from './components/FormPrestamos'
 
 const App = () => {
   return (
-    <div>
-      <FormLibros />
-      <FormAutores />
-      <FormClientes />
-      <FormEmpleados />
-      <FormPrestamos />
-    </div>
+    <>
+      <NavBar />
+      <div className="w3-container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/libros" element={<Libros />} />
+          <Route path="/autores" element={<Autores />} />
+          <Route path="/clientes" element={<Clientes />} />
+          <Route path="/empleados" element={<Empleados />} />
+          <Route path="/prestamos" element={<Prestamos />} />
+          <Route path="/*" element={<Navigate to='/' />} />
+        </Routes>
+      </div>
+    </>
   )
 }
 

@@ -1,13 +1,12 @@
 import { useState } from 'react'
-import { postCliente } from '../services/clientesServices'
+import { postAutor } from '../../services/autoresServices'
 
-function FormClientes() {
+function FormAutores() {
   const [form, setForm] = useState({
     id: '',
     nombre: '',
     apellido: '',
-    userName: '',
-    email: '',
+    nacionalidad: '',
   })
   const [mensaje, setMensaje] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -21,11 +20,11 @@ function FormClientes() {
     setIsLoading(true)
     setMensaje(null)
     try {
-      const data = await postCliente(form)
-      setMensaje({ tipo: 'exito', texto: `Cliente registrado correctamente con id: ${data.id}` })
-      setForm({ id: '', nombre: '', apellido: '', userName: '', email: '' })
+      const data = await postAutor(form)
+      setMensaje({ tipo: 'exito', texto: `Autor registrado correctamente con id: ${data.id}` })
+      setForm({ id: '', nombre: '', apellido: '', nacionalidad: '' })
     } catch (error) {
-      setMensaje({ tipo: 'error', texto: `Error ${error.status ?? ''}: No se pudo registrar el cliente` })
+      setMensaje({ tipo: 'error', texto: `Error ${error.status ?? ''}: No se pudo registrar el autor` })
     } finally {
       setIsLoading(false)
     }
@@ -33,7 +32,7 @@ function FormClientes() {
 
   return (
     <div className="w3-card w3-padding w3-margin">
-      <h3>Registrar Cliente</h3>
+      <h3>Registrar Autor</h3>
       {mensaje && (
         <div className={`w3-panel ${mensaje.tipo === 'exito' ? 'w3-green' : 'w3-red'}`}>
           <p>{mensaje.texto}</p>
@@ -70,22 +69,12 @@ function FormClientes() {
           required
         />
 
-        <label className="w3-text-blue"><b>Usuario</b></label>
+        <label className="w3-text-blue"><b>Nacionalidad</b></label>
         <input
           className="w3-input w3-border w3-margin-bottom"
           type="text"
-          name="userName"
-          value={form.userName}
-          onChange={handleChange}
-          required
-        />
-
-        <label className="w3-text-blue"><b>Email</b></label>
-        <input
-          className="w3-input w3-border w3-margin-bottom"
-          type="email"
-          name="email"
-          value={form.email}
+          name="nacionalidad"
+          value={form.nacionalidad}
           onChange={handleChange}
           required
         />
@@ -102,4 +91,4 @@ function FormClientes() {
   )
 }
 
-export default FormClientes
+export default FormAutores
