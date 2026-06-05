@@ -1,0 +1,13 @@
+.textoBold {
+  font-weight: bold;
+}
+
+.w3-table td {
+  vertical-align: middle;
+}
+
+#NavBar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}

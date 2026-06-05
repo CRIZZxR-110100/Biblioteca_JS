@@ -1,17 +1,18 @@
-import { useState } from 'react'
-import { postEmpleado } from '../../services/empleadosServices'
+import { useState, useEffect } from 'react'
+import { postEmpleado, putEmpleado } from '../../services/empleadosServices'
 
-function FormEmpleados() {
-  const [form, setForm] = useState({
-    id: '',
-    nombre: '',
-    apellido: '',
-    email: '',
-    puesto: '',
-    area: '',
-  })
+function FormEmpleados({ empleado = null, onSuccess }) {
+  const isEditar = empleado !== null
+  const vacio = { nombre: '', apellido: '', email: '', puesto: '', area: '' }
+
+  const [form, setForm] = useState(empleado ?? vacio)
   const [mensaje, setMensaje] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    setForm(empleado ?? vacio)
+    setMensaje(null)
+  }, [empleado])
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -22,35 +23,33 @@ function FormEmpleados() {
     setIsLoading(true)
     setMensaje(null)
     try {
-      const data = await postEmpleado(form)
-      setMensaje({ tipo: 'exito', texto: `Empleado registrado correctamente con id: ${data.id}` })
-      setForm({ id: '', nombre: '', apellido: '', email: '', puesto: '', area: '' })
+      if (isEditar) {
+        await putEmpleado(form.id, form)
+        setMensaje({ tipo: 'exito', texto: 'Empleado actualizado correctamente' })
+      } else {
+        const data = await postEmpleado(form)
+        setMensaje({ tipo: 'exito', texto: `Empleado registrado correctamente con id: ${data.id}` })
+      }
+      setTimeout(() => {
+        onSuccess?.()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }, 1200)
     } catch (error) {
-      setMensaje({ tipo: 'error', texto: `Error ${error.status ?? ''}: No se pudo registrar el empleado` })
+      setMensaje({ tipo: 'error', texto: `Error ${error.status ?? ''}: No se pudo ${isEditar ? 'editar' : 'registrar'} el empleado` })
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <div className="w3-card w3-padding w3-margin">
-      <h3>Registrar Empleado</h3>
+    <div id="Form" className="w3-margin-bottom">
+      <h2 className="w3-margin-top">{isEditar ? 'Editar' : 'Registrar'} <span className="textoBold">Empleado</span></h2>
       {mensaje && (
         <div className={`w3-panel ${mensaje.tipo === 'exito' ? 'w3-green' : 'w3-red'}`}>
           <p>{mensaje.texto}</p>
         </div>
       )}
       <form onSubmit={handleSubmit}>
-        <label className="w3-text-blue"><b>ID</b></label>
-        <input
-          className="w3-input w3-border w3-margin-bottom"
-          type="text"
-          name="id"
-          value={form.id}
-          onChange={handleChange}
-          required
-        />
-
         <label className="w3-text-blue"><b>Nombre</b></label>
         <input
           className="w3-input w3-border w3-margin-bottom"
@@ -106,8 +105,22 @@ function FormEmpleados() {
           type="submit"
           disabled={isLoading}
         >
-          {isLoading ? 'Guardando...' : 'Registrar'}
+          {isLoading ? 'Guardando...' : isEditar ? 'Actualizar' : 'Registrar'}
         </button>
+
+        {
+          isEditar &&
+          <button
+            className="w3-button w3-margin-top w3-border w3-margin-left"
+            type="button"
+            onClick={() => {
+              onSuccess?.()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}>
+
+            Cancelar
+          </button>
+        }
       </form>
     </div>
   )

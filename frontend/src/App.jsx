@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom"
 import { NavBar } from "./components/NavBar.jsx"
+import './App.css'
 
 import { Home } from "./components/paginas/Home.jsx"
 import { Libros } from "./components/paginas/Libros.jsx"
@@ -7,7 +8,6 @@ import { Autores } from "./components/paginas/Autores.jsx"
 import { Clientes } from "./components/paginas/Clientes.jsx"
 import { Empleados } from "./components/paginas/Empleados.jsx"
 import { Prestamos } from "./components/paginas/Prestamos.jsx"
-
 
 const App = () => {
   return (

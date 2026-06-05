@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import { postCliente } from '../../services/clientesServices'
+import { useState, useEffect } from 'react'
+import { postCliente, putCliente } from '../../services/clientesServices'
 
-function FormClientes() {
-  const [form, setForm] = useState({
-    id: '',
-    nombre: '',
-    apellido: '',
-    userName: '',
-    email: '',
-  })
+function FormClientes({ cliente = null, onSuccess }) {
+  const isEditar = cliente !== null
+  const vacio = { nombre: '', apellido: '', userName: '', email: '' }
+
+  const [form, setForm] = useState(cliente ?? vacio)
   const [mensaje, setMensaje] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    setForm(cliente ?? vacio)
+    setMensaje(null)
+  }, [cliente])
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -21,35 +23,33 @@ function FormClientes() {
     setIsLoading(true)
     setMensaje(null)
     try {
-      const data = await postCliente(form)
-      setMensaje({ tipo: 'exito', texto: `Cliente registrado correctamente con id: ${data.id}` })
-      setForm({ id: '', nombre: '', apellido: '', userName: '', email: '' })
+      if (isEditar) {
+        await putCliente(form.id, form)
+        setMensaje({ tipo: 'exito', texto: 'Cliente actualizado correctamente' })
+      } else {
+        const data = await postCliente(form)
+        setMensaje({ tipo: 'exito', texto: `Cliente registrado correctamente con id: ${data.id}` })
+      }
+      setTimeout(() => {
+        onSuccess?.()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }, 1200)
     } catch (error) {
-      setMensaje({ tipo: 'error', texto: `Error ${error.status ?? ''}: No se pudo registrar el cliente` })
+      setMensaje({ tipo: 'error', texto: `Error ${error.status ?? ''}: No se pudo ${isEditar ? 'editar' : 'registrar'} el cliente` })
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <div className="w3-card w3-padding w3-margin">
-      <h3>Registrar Cliente</h3>
+    <div id="Form" className="w3-margin-bottom">
+      <h2 className="w3-margin-top">{isEditar ? 'Editar' : 'Registrar'} <span className="textoBold">Cliente</span></h2>
       {mensaje && (
         <div className={`w3-panel ${mensaje.tipo === 'exito' ? 'w3-green' : 'w3-red'}`}>
           <p>{mensaje.texto}</p>
         </div>
       )}
       <form onSubmit={handleSubmit}>
-        <label className="w3-text-blue"><b>ID</b></label>
-        <input
-          className="w3-input w3-border w3-margin-bottom"
-          type="text"
-          name="id"
-          value={form.id}
-          onChange={handleChange}
-          required
-        />
-
         <label className="w3-text-blue"><b>Nombre</b></label>
         <input
           className="w3-input w3-border w3-margin-bottom"
@@ -95,8 +95,22 @@ function FormClientes() {
           type="submit"
           disabled={isLoading}
         >
-          {isLoading ? 'Guardando...' : 'Registrar'}
+          {isLoading ? 'Guardando...' : isEditar ? 'Actualizar' : 'Registrar'}
         </button>
+
+        {
+          isEditar &&
+          <button
+            className="w3-button w3-margin-top w3-border w3-margin-left"
+            type="button"
+            onClick={() => {
+              onSuccess?.()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}>
+
+            Cancelar
+          </button>
+        }
       </form>
     </div>
   )

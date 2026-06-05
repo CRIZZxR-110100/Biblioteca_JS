@@ -3,9 +3,7 @@
     {
       "id": "218",
       "titulo": "Native Son",
-      "idAutores": [
-        "680"
-      ],
+      "idAutor": "680",
       "editorial": "Ryan LLC",
       "edicion": "9",
       "ano_pub": "2009"
@@ -13,10 +11,7 @@
     {
       "id": "738",
       "titulo": "His Dark Materials",
-      "idAutores": [
-        "602",
-        "904"
-      ],
+      "idAutor": "602",
       "editorial": "Hane - Ritchie",
       "edicion": "5",
       "ano_pub": "1992"
@@ -24,9 +19,7 @@
     {
       "id": "879",
       "titulo": "Second Treatise of Government",
-      "idAutores": [
-        "307"
-      ],
+      "idAutor": "307",
       "editorial": "Crona - Connelly",
       "edicion": "9",
       "ano_pub": "2004"
@@ -34,12 +27,7 @@
     {
       "id": "415",
       "titulo": "Under the Volcano",
-      "idAutores": [
-
-        "802",
-        "186",
-        "792"
-      ],
+      "idAutor": "802",
       "editorial": "Prohaska - Hansen",
       "edicion": "12",
       "ano_pub": "2006"
@@ -47,10 +35,7 @@
     {
       "id": "461",
       "titulo": "The Waste Land",
-      "idAutores": [
-        "602",
-        "680"
-      ],
+      "idAutor": "186",
       "editorial": "Reinger and Sons",
       "edicion": "10",
       "ano_pub": "2017"
@@ -72,13 +57,13 @@
     {
       "id": "802",
       "nombre": "Grace",
-      "apellido": "Bruen",
+      "apellido": "Bruce",
       "nacionalidad": "Venezuela"
     },
     {
       "id": "186",
       "nombre": "Beaulah",
-      "apellido": "Will",
+      "apellido": "Willis",
       "nacionalidad": "Portugal"
     },
     {
@@ -96,7 +81,7 @@
     {
       "id": "307",
       "nombre": "Emerson",
-      "apellido": "Green",
+      "apellido": "Green-G",
       "nacionalidad": "Equatorial Guinea"
     },
     {
@@ -200,27 +185,36 @@
   "prestamos": [
     {
       "id": "001",
-      "estado": "devuelto (Posibles: devuelto, activo)",
-      "idLibro": "",
-      "idCliente": "",
-      "inicio": "datetime",
-      "termino": "datetime"
+      "estado": "devuelto",
+      "idLibro": "461",
+      "idCliente": "149",
+      "inicio": "2026-05-04",
+      "termino": "2026-06-04"
     },
     {
       "id": "002",
-      "estado": "activo (Posibles: devuelto, activo)",
-      "idLibro": "",
-      "idCliente": "",
-      "inicio": "datetime",
-      "termino": "datetime"
+      "estado": "devuelto",
+      "idLibro": "879",
+      "idCliente": "717",
+      "inicio": "2026-06-01",
+      "termino": "2026-07-01"
     },
     {
       "id": "003",
-      "estado": "activo (Posibles: devuelto, activo)",
-      "idLibro": "",
-      "idCliente": "",
-      "inicio": "datetime",
-      "termino": "datetime"
+      "estado": "activo",
+      "idLibro": "218",
+      "idCliente": "97",
+      "inicio": "2026-05-27",
+      "termino": "2026-06-27"
+    },
+    {
+      "estado": "activo",
+      "idLibro": "738",
+      "idCliente": "541",
+      "inicio": "2026-06-05",
+      "termino": "2026-07-05",
+      "id": "yDMn8PSdmvM"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

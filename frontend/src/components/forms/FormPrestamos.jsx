@@ -1,16 +1,13 @@
 import { useState, useEffect } from 'react'
-import { postPrestamo } from '../../services/prestamosServices'
+import { postPrestamo, putPrestamo } from '../../services/prestamosServices'
 import { getLibros } from '../../services/librosServices'
 import { getUsuarios } from '../../services/clientesServices'
 
-function FormPrestamos() {
-  const [form, setForm] = useState({
-    estado: 'activo',
-    idLibro: '',
-    idCliente: '',
-    inicio: '',
-    termino: '',
-  })
+function FormPrestamos({ prestamo = null, onSuccess }) {
+  const isEditar = prestamo !== null
+  const vacio = { estado: 'activo', idLibro: '', idCliente: '', inicio: '', termino: '' }
+
+  const [form, setForm] = useState(prestamo ?? vacio)
   const [libros, setLibros] = useState([])
   const [clientes, setClientes] = useState([])
   const [mensaje, setMensaje] = useState(null)
@@ -26,6 +23,11 @@ function FormPrestamos() {
       .catch(() => setMensaje({ tipo: 'error', texto: 'No se pudieron cargar los clientes' }))
   }, [])
 
+  useEffect(() => {
+    setForm(prestamo ?? vacio)
+    setMensaje(null)
+  }, [prestamo])
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
@@ -35,19 +37,27 @@ function FormPrestamos() {
     setIsLoading(true)
     setMensaje(null)
     try {
-      const data = await postPrestamo(form)
-      setMensaje({ tipo: 'exito', texto: `Préstamo registrado correctamente con id: ${data.id}` })
-      setForm({ estado: 'activo', idLibro: '', idCliente: '', inicio: '', termino: '' })
+      if (isEditar) {
+        await putPrestamo(form.id, form)
+        setMensaje({ tipo: 'exito', texto: 'Préstamo actualizado correctamente' })
+      } else {
+        const data = await postPrestamo(form)
+        setMensaje({ tipo: 'exito', texto: `Préstamo registrado correctamente con id: ${data.id}` })
+      }
+      setTimeout(() => {
+        onSuccess?.()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }, 1200)
     } catch (error) {
-      setMensaje({ tipo: 'error', texto: `Error ${error.status ?? ''}: No se pudo registrar el préstamo` })
+      setMensaje({ tipo: 'error', texto: `Error ${error.status ?? ''}: No se pudo ${isEditar ? 'editar' : 'registrar'} el préstamo` })
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <div className="w3-card w3-padding w3-margin">
-      <h3>Registrar Préstamo</h3>
+    <div id="Form" className="w3-margin-bottom">
+      <h2 className="w3-margin-top">{isEditar ? 'Editar' : 'Registrar'} <span className="textoBold">Prestamo</span></h2>
       {mensaje && (
         <div className={`w3-panel ${mensaje.tipo === 'exito' ? 'w3-green' : 'w3-red'}`}>
           <p>{mensaje.texto}</p>
@@ -100,7 +110,7 @@ function FormPrestamos() {
         <label className="w3-text-blue"><b>Fecha de inicio</b></label>
         <input
           className="w3-input w3-border w3-margin-bottom"
-          type="datetime-local"
+          type="date"
           name="inicio"
           value={form.inicio}
           onChange={handleChange}
@@ -110,7 +120,7 @@ function FormPrestamos() {
         <label className="w3-text-blue"><b>Fecha de término</b></label>
         <input
           className="w3-input w3-border w3-margin-bottom"
-          type="datetime-local"
+          type="date"
           name="termino"
           value={form.termino}
           onChange={handleChange}
@@ -122,8 +132,22 @@ function FormPrestamos() {
           type="submit"
           disabled={isLoading}
         >
-          {isLoading ? 'Guardando...' : 'Registrar'}
+          {isLoading ? 'Guardando...' : isEditar ? 'Actualizar' : 'Registrar'}
         </button>
+
+        {
+          isEditar &&
+          <button
+            className="w3-button w3-margin-top w3-border w3-margin-left"
+            type="button"
+            onClick={() => {
+              onSuccess?.()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}>
+
+            Cancelar
+          </button>
+        }
       </form>
     </div>
   )

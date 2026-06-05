@@ -1,15 +1,18 @@
-import { useState } from 'react'
-import { postAutor } from '../../services/autoresServices'
+import { useState, useEffect } from 'react'
+import { postAutor, putAutor } from '../../services/autoresServices'
 
-function FormAutores() {
-  const [form, setForm] = useState({
-    id: '',
-    nombre: '',
-    apellido: '',
-    nacionalidad: '',
-  })
+function FormAutores({ autor = null, onSuccess }) {
+  const isEditar = autor !== null
+  const vacio = { nombre: '', apellido: '', nacionalidad: '' }
+
+  const [form, setForm] = useState(autor ?? vacio)
   const [mensaje, setMensaje] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    setForm(autor ?? vacio)
+    setMensaje(null)
+  }, [autor])
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -20,35 +23,33 @@ function FormAutores() {
     setIsLoading(true)
     setMensaje(null)
     try {
-      const data = await postAutor(form)
-      setMensaje({ tipo: 'exito', texto: `Autor registrado correctamente con id: ${data.id}` })
-      setForm({ id: '', nombre: '', apellido: '', nacionalidad: '' })
+      if (isEditar) {
+        await putAutor(form.id, form)
+        setMensaje({ tipo: 'exito', texto: 'Autor actualizado correctamente' })
+      } else {
+        const data = await postAutor(form)
+        setMensaje({ tipo: 'exito', texto: `Autor registrado correctamente con id: ${data.id}` })
+      }
+      setTimeout(() => {
+        onSuccess?.()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }, 1200)
     } catch (error) {
-      setMensaje({ tipo: 'error', texto: `Error ${error.status ?? ''}: No se pudo registrar el autor` })
+      setMensaje({ tipo: 'error', texto: `Error ${error.status ?? ''}: No se pudo ${isEditar ? 'editar' : 'registrar'} el autor` })
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <div className="w3-card w3-padding w3-margin">
-      <h3>Registrar Autor</h3>
+    <div id="Form" className="w3-margin-bottom">
+      <h2 className="w3-margin-top">{isEditar ? 'Editar' : 'Registrar'} <span className="textoBold">Autor</span></h2>
       {mensaje && (
         <div className={`w3-panel ${mensaje.tipo === 'exito' ? 'w3-green' : 'w3-red'}`}>
           <p>{mensaje.texto}</p>
         </div>
       )}
       <form onSubmit={handleSubmit}>
-        <label className="w3-text-blue"><b>ID</b></label>
-        <input
-          className="w3-input w3-border w3-margin-bottom"
-          type="text"
-          name="id"
-          value={form.id}
-          onChange={handleChange}
-          required
-        />
-
         <label className="w3-text-blue"><b>Nombre</b></label>
         <input
           className="w3-input w3-border w3-margin-bottom"
@@ -84,8 +85,22 @@ function FormAutores() {
           type="submit"
           disabled={isLoading}
         >
-          {isLoading ? 'Guardando...' : 'Registrar'}
+          {isLoading ? 'Guardando...' : isEditar ? 'Actualizar' : 'Registrar'}
         </button>
+
+        {
+          isEditar &&
+          <button
+            className="w3-button w3-margin-top w3-border w3-margin-left"
+            type="button"
+            onClick={() => {
+              onSuccess?.()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}>
+
+            Cancelar
+          </button>
+        }
       </form>
     </div>
   )
