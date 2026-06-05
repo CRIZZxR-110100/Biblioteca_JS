@@ -17,7 +17,7 @@ El proyecto consiste en una aplicación WEB tipo SPA para la gestión de una bib
 Proyecto_biblio/
 ├── backend/
 │   ├── db/
-│   │   └── datos.json        # Base de datos JSON
+│   │   └── datos.json         # Base de datos JSON
 │   ├── deno.json              # Configuración para Deno
 │   └── package.json           # Configuración para Node.js
 ├── frontend/
@@ -47,65 +47,68 @@ Tener instalado **uno** de los siguientes runtimes:
 ### Clonar el repositorio
 
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/CRIZZxR-110100/Biblioteca_JS.git
 cd Proyecto_biblio
 ```
 
 ---
 
-#### 1. Instalar dependencias del backend
+#### Con Node.js
+
+##### 1. Instalar dependencias del backend
 
 ```bash
 cd backend
 npm install
 ```
+##### 2. Iniciar el servidor API
 
-> **Nota:** Si usas Deno, puedes omitir este paso. Deno descarga las dependencias automáticamente al ejecutar.
-
-#### 2. Iniciar el servidor API (en una terminal)
-
-Con Node.js:
 ```bash
 npm run back
 ```
 
-Con Deno:
-```bash
-# Entra en la carpeta del backend, si no estás en ella
-cd backend
-deno run back
-```
+El backend estará disponible en `http://localhost:52752`
 
-> El servidor se levantará en `http://localhost:52752`
+##### 3. Instalar dependencias del frontend (en otra terminal)
 
-#### 3. Instalar dependencias del frontend (en otra terminal)
-
-Con Node.js:
 ```bash
 cd frontend
 npm install
 ```
+##### 4. Iniciar el servidor de desarrollo del frontend
 
-Con Deno:
-```bash
-cd frontend
-deno install
-# Solo valido de Deno 2.0.0 en adelante
-```
-
-#### 4. Iniciar el servidor de desarrollo del frontend
-
-Con Node.js:
 ```bash
 npm run dev
 ```
 
-Con Deno:
+El frontend estará disponible en `http://localhost:5173`
+
+---
+
+#### Con Deno
+
+##### 1. Instalar dependencias del backend e iniciar el servidor API
+```bash
+cd backend
+deno run back
+```
+
+El backend estará disponible en `http://localhost:52752`
+
+##### 2. Instalar dependencias del frontend (en otra terminal)
+```bash
+cd frontend
+deno install
+```
+
+> Nota: `deno install` solo es valido de Deno 2.0.0 en adelante
+
+##### 3. Iniciar el servidor de desarrollo del frontend
 ```bash
 deno run dev
 ```
 
-> El frontend estará disponible en `http://localhost:5173`
+El frontend estará disponible en `http://localhost:5173`
 
 ---
 
