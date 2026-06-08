@@ -2,6 +2,10 @@
 
 El proyecto consiste en una aplicación WEB tipo SPA para la gestión de una biblioteca. Permite administrar **libros**, **autores**, **clientes**, **empleados** y **préstamos**, a través de una interfaz intuitiva con operaciones CRUD completas.
 
+## Integrantes del Proyecto
+| Matricula | Alumno |
+| 191490 | Cristóbal Rafael Lara Páez |
+
 ## Tecnologías utilizadas
 
 | Capa | Tecnología |
