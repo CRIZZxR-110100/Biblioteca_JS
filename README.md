@@ -4,7 +4,12 @@ El proyecto consiste en una aplicación WEB tipo SPA para la gestión de una bib
 
 ## Integrantes del Proyecto
 | Matricula | Alumno |
+|-----------|--------|
 | 191490 | Cristóbal Rafael Lara Páez |
+| 194043 | Angel Emilio Martínez Camacho |
+| 191535 | Mariana Máynez Jacinto |
+
+
 
 ## Tecnologías utilizadas
 
