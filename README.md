@@ -138,7 +138,7 @@ El frontend estará disponible en `http://localhost:5173`
 ---
 
 ### Información del proyecto
-**Alumno:** Cristóbal Rafael **Lara Páez** (***191490***)
+**Alumno:** Cristóbal Rafael **Lara Páez**, Ángel Emilio **Martínez Camacho**, Mariana **Maynez Jacinto**
 
 **Asignatura:** *Desarrollo de Aplicaciones con Bibliotecas JS*
 
