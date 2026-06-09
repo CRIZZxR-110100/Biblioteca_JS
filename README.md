@@ -2,15 +2,6 @@
 
 El proyecto consiste en una aplicación WEB tipo SPA para la gestión de una biblioteca. Permite administrar **libros**, **autores**, **clientes**, **empleados** y **préstamos**, a través de una interfaz intuitiva con operaciones CRUD completas.
 
-## Integrantes del Proyecto
-| Matricula | Alumno |
-|-----------|--------|
-| 191490 | Cristóbal Rafael Lara Páez |
-| 194043 | Angel Emilio Martínez Camacho |
-| 191535 | Mariana Máynez Jacinto |
-
-
-
 ## Tecnologías utilizadas
 
 | Capa | Tecnología |
@@ -121,7 +112,7 @@ El frontend estará disponible en `http://localhost:5173`
 
 ---
 
-## 🖥️ Uso de la aplicación
+## Uso de la aplicación
 
 1. Abre el navegador en `http://localhost:5173`
 2. Usa la **barra de navegación** para moverte entre las secciones
@@ -132,7 +123,7 @@ El frontend estará disponible en `http://localhost:5173`
 4. Al presionar **Editar**, el formulario se llena automáticamente con los datos del registro seleccionado
 5. Al presionar **Borrar**, se muestra una confirmación antes de eliminar
 
-## 📝 Módulos disponibles
+## Módulos disponibles
 
 | Módulo | Ruta | Descripción |
 |--------|------|-------------|
@@ -142,3 +133,15 @@ El frontend estará disponible en `http://localhost:5173`
 | Clientes | `/clientes` | Gestión de clientes/usuarios |
 | Empleados | `/empleados` | Gestión de empleados |
 | Préstamos | `/prestamos` | Gestión de préstamos (con selección de libro y cliente) |
+
+
+---
+
+### Información del proyecto
+**Alumno:** Cristóbal Rafael **Lara Páez** (***191490***)
+
+**Asignatura:** *Desarrollo de Aplicaciones con Bibliotecas JS*
+
+**Docente:** Jesús Alejandro Flores Hernández
+
+Entrega: 7 de mayo del 2026
